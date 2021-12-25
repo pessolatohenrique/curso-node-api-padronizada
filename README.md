@@ -20,6 +20,10 @@ Acesse a pasta do projeto e rode o comando para instalar as dependências npm:
 
 Criar arquivo .env e configurar as variáveis de ambiente, semelhantes ao arquivo ".env-example".
 
+Para sincronizar as tabelas, execute:
+
+    node ./api/config/syncDatabase.js
+
 E, por fim, rode o projeto:
 
 ```
