@@ -1,4 +1,4 @@
-const SupplierTable = require("../migrations/create-supplier");
+const SupplierTable = require("../models/supplier");
 
 SupplierTable.sync()
   .then(() => console.log("Supplier was created!"))
