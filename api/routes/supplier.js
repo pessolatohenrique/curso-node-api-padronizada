@@ -11,7 +11,7 @@ router
   })
   .post(async (req, res) => {
     const result = await model.create(req.body);
-    return res.send(result);
+    return res.status(201).send(result);
   });
 
 router
@@ -30,5 +30,9 @@ router
     const result = await model.findOne({ where: { id: req.params.id } });
 
     return res.send(result);
+  })
+  .delete(async (req, res) => {
+    await model.destroy({ where: { id: req.params.id } });
+    return res.status(204).send();
   });
 module.exports = router;
