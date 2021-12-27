@@ -1,5 +1,12 @@
-const SupplierTable = require("../models/supplier");
+const models = [require("../models/supplier"), require("../models/product")];
 
-SupplierTable.sync()
-  .then(() => console.log("Supplier was created!"))
-  .catch((error) => console.log("error", error));
+async function createTables() {
+  [...models].map(async (item) => {
+    item
+      .sync()
+      .then(() => console.log(`${item} was created!`))
+      .catch((error) => console.log("error", error));
+  });
+}
+
+createTables();
